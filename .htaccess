@@ -1,0 +1,48 @@
+# ── Charset e erros ──────────────────────────────────────
+AddDefaultCharset UTF-8
+ErrorDocument 404 /index.html
+
+# ── Compressão Gzip ───────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Cache do navegador ────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                 "access plus 1 day"
+  ExpiresByType text/css                  "access plus 1 month"
+  ExpiresByType application/javascript    "access plus 1 month"
+  ExpiresByType image/png                 "access plus 6 months"
+  ExpiresByType image/jpeg                "access plus 6 months"
+  ExpiresByType image/svg+xml             "access plus 6 months"
+  ExpiresByType image/x-icon              "access plus 1 year"
+</IfModule>
+
+# ── Cabeçalhos de cache ───────────────────────────────────
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|png|jpg|jpeg|ico|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+
+  # Segurança
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── Redirecionar www → sem www (ajuste o domínio) ─────────
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^www\.seudominio\.com [NC]
+# RewriteRule ^(.*)$ https://seudominio.com/$1 [L,R=301]
+
+# ── Forçar HTTPS ──────────────────────────────────────────
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

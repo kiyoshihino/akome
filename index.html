@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ákome | Motivação não é Disciplina — O Ebook que vai mudar sua mentalidade</title>
+  <meta name="description" content="Descubra por que motivação não é o que você precisa. O método Ákome vai transformar sua relação com resultados, hábitos e conquistas de forma definitiva." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://seudominio.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seudominio.com/" />
+  <meta property="og:title" content="Ákome | Motivação não é Disciplina" />
+  <meta property="og:description" content="Descubra por que motivação não é o que você precisa. O método Ákome vai transformar sua relação com resultados, hábitos e conquistas." />
+  <meta property="og:image" content="https://seudominio.com/capa-ebook.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ákome | Motivação não é Disciplina" />
+  <meta name="twitter:description" content="O ebook que vai transformar sua relação com disciplina e resultados." />
+  <meta name="twitter:image" content="https://seudominio.com/capa-ebook.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --black-soft: #111111;
+      --black-card: #161616;
+      --gold: #c9a84c;
+      --gold-light: #e8c96e;
+      --gold-dark: #a07830;
+      --gold-muted: #8a6e3a;
+      --white: #f5f0e8;
+      --white-dim: #c8bfaf;
+      --text-muted: #7a7060;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILS ── */
+    .serif { font-family: 'Cormorant Garamond', serif; }
+    .gold { color: var(--gold); }
+    .gold-light { color: var(--gold-light); }
+    .center { text-align: center; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── GOLD LINE DECORATION ── */
+    .gold-line {
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 32px;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, transparent 100%);
+      backdrop-filter: blur(4px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1000px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dark);
+      padding: 6px 18px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      background: rgba(201,168,76,0.05);
+    }
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+    .hero-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white-dim);
+      margin-bottom: 32px;
+      line-height: 1.4;
+    }
+    .hero-text p {
+      font-size: 0.95rem;
+      color: var(--white-dim);
+      margin-bottom: 40px;
+      max-width: 440px;
+    }
+    .hero-book {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-book img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 4px;
+      box-shadow:
+        -20px 20px 60px rgba(0,0,0,0.8),
+        0 0 40px rgba(201,168,76,0.15),
+        0 0 80px rgba(201,168,76,0.05);
+      transform: perspective(800px) rotateY(-8deg) rotateX(3deg);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .hero-book img:hover {
+      transform: perspective(800px) rotateY(-4deg) rotateX(1deg) scale(1.03);
+      box-shadow:
+        -24px 24px 80px rgba(0,0,0,0.85),
+        0 0 60px rgba(201,168,76,0.25);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+    .btn-gold:hover::before { transform: translateX(100%); }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.4);
+    }
+    .btn-ghost {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gold-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 24px;
+    }
+    .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 0; }
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+    .section-title span { color: var(--gold-light); }
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--white-dim);
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 80px auto;
+      max-width: 300px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dark));
+    }
+    .divider::after { background: linear-gradient(90deg, var(--gold-dark), transparent); }
+    .divider-icon { color: var(--gold); font-size: 1rem; }
+
+    /* ── PAIN SECTION ── */
+    #pain { background: var(--black-soft); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      margin-top: 60px;
+    }
+    .pain-card {
+      background: var(--black-card);
+      padding: 36px 28px;
+      border-top: 1px solid rgba(201,168,76,0.12);
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .pain-card:hover {
+      border-color: var(--gold-muted);
+      background: #1a1a1a;
+    }
+    .pain-icon {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .pain-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .pain-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* ── ABOUT SECTION ── */
+    #about { background: var(--black); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 28px;
+    }
+    .about-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .about-quote cite {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      font-style: normal;
+    }
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--white-dim);
+      margin-bottom: 20px;
+    }
+
+    /* ── BENEFITS ── */
+    #benefits { background: var(--black-soft); }
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .benefit-item {
+      display: flex;
+      gap: 20px;
+      padding: 28px;
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      background: var(--black-card);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .benefit-item:hover {
+      border-color: rgba(201,168,76,0.35);
+      transform: translateY(-3px);
+    }
+    .benefit-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 44px;
+    }
+    .benefit-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .benefit-item p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--black); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+    .testimonial-card {
+      background: var(--black-card);
+      padding: 32px 28px;
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: 2px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      line-height: 1;
+      color: rgba(201,168,76,0.1);
+      position: absolute;
+      top: 8px;
+      left: 20px;
+    }
+    .stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 4px; }
+    .testimonial-card p {
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+    }
+
+    /* ── WHAT'S INSIDE ── */
+    #chapters { background: var(--black-soft); }
+    .chapters-list { margin-top: 60px; }
+    .chapter-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+    }
+    .chapter-item:last-child { border-bottom: none; }
+    .chapter-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--gold-muted);
+      flex-shrink: 0;
+      width: 28px;
+      padding-top: 2px;
+    }
+    .chapter-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .chapter-content p { font-size: 0.85rem; color: var(--text-muted); }
+    .check { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; padding-top: 4px; }
+
+    /* ── CTA / PRICING ── */
+    #cta {
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .price-card {
+      border: 1px solid var(--gold-dark);
+      border-radius: 4px;
+      padding: 56px 48px;
+      text-align: center;
+      background: var(--black-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .price-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      padding: 6px 20px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+    .price-old {
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-bottom: 8px;
+    }
+    .price-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .price-main sup {
+      font-size: 0.4em;
+      vertical-align: super;
+      font-weight: 300;
+      color: var(--gold-muted);
+    }
+    .price-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+    }
+    .price-features {
+      list-style: none;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .price-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+      font-size: 0.88rem;
+      color: var(--white-dim);
+    }
+    .price-features li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+    .guarantee {
+      margin-top: 32px;
+      padding: 20px;
+      border: 1px dashed rgba(201,168,76,0.2);
+      border-radius: 2px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .guarantee strong { color: var(--white-dim); }
+
+    /* ── FAQ ── */
+    #faq { background: var(--black-soft); }
+    .faq-list { margin-top: 60px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .faq-item { border-bottom: 1px solid rgba(201,168,76,0.1); overflow: hidden; }
+    .faq-item:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px 4px;
+      text-align: left;
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+    .faq-question:hover { color: var(--gold-light); }
+    .faq-item.open .faq-question { color: var(--gold-light); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(201,168,76,0.1);
+      border-color: var(--gold);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 4px;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 24px; }
+    .faq-answer p { font-size: 0.9rem; color: var(--white-dim); line-height: 1.8; }
+    .faq-answer strong { color: var(--gold-light); font-weight: 600; }
+    .faq-cta-nudge {
+      margin-top: 56px;
+      text-align: center;
+      padding: 36px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 2px;
+      background: var(--black-card);
+    }
+    .faq-cta-nudge p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--white-dim);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050505;
+      padding: 48px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    footer p { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-book { order: -1; }
+      .hero-book img { max-width: 220px; transform: none; }
+      .hero-text p { margin: 0 auto 40px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .price-card { padding: 36px 24px; }
+      section { padding: 72px 0; }
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navegação principal">
+  <div class="nav-logo">Ákome</div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text fade-in">
+      <span class="badge">✦ Ebook Premium ✦</span>
+      <h1>Ákome</h1>
+      <h2>Motivação não é Disciplina</h2>
+      <p>
+        Você já acordou cheio de motivação e a semana seguinte voltou a ser a mesma? A verdade é que motivação é uma mentira conveniente — e este ebook vai te mostrar o que realmente funciona.
+      </p>
+      <a href="#cta" class="btn-gold">Quero meu acesso agora</a>
+      <a href="#about" class="btn-ghost">Saiba mais</a>
+    </div>
+    <div class="hero-book fade-in">
+      <img src="capa-ebook.png" alt="Capa do Ebook Ákome - Motivação não é Disciplina" />
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOR / IDENTIFICAÇÃO ══ -->
+<section id="pain">
+  <div class="container">
+    <div class="center fade-in">
+      <span class="section-label">Você se reconhece aqui?</span>
+      <h2 class="section-title">Você já tentou de tudo.<br /><span>E cada vez começa do zero.</span></h2>
+      <p class="section-sub">A maioria das pessoas nunca chegará onde quer porque continua apostando na ferramenta errada. A motivação te move por dias. A disciplina te move por décadas.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-in">
+        <span class="pain-icon">🔁</span>
+        <h3>Recomeça todo mês</h3>
+        <p>A segunda-feira se tornou o seu rito de passagem. Mas desta vez vai ser diferente, certo?</p>
+      </div>
+      <div class="pain-card fade-in">
+        <span class="pain-icon">🎯</span>
+        <h3>Metas que nunca saem do papel</h3>
+        <p>Você sabe exatamente o que quer. O problema é que a empolgação dura apenas até o primeiro obstáculo real.</p>
+      </div>
+      <div class="pain-card fade-in">
+        <span class="pain-icon">😮‍💨</span>
+        <h3>Esgotamento sem avanço</h3>
+        <p>Trabalha muito, se cobra mais ainda, mas a sensação de progresso real simplesmente não aparece.</p>
+      </div>
+      <div class="pain-card fade-in">
+        <span class="pain-icon">📱</span>
+        <h3>Distração constante</h3>
+        <p>Você começa a tarefa, cinco minutos depois está no feed. A concentração parece impossível nos dias de hoje.</p>
+      </div>
+      <div class="pain-card fade-in">
+        <span class="pain-icon">📊</span>
+        <h3>Comparação paralisante</h3>
+        <p>Você olha para quem chegou lá e sente que está ficando para trás. Em vez de te mover, isso te paralisa ainda mais.</p>
+      </div>
+      <div class="pain-card fade-in">
+        <span class="pain-icon">🚧</span>
+        <h3>Sabotagem no momento H</h3>
+        <p>Quando as coisas finalmente começam a funcionar, algo dentro de você encontra uma desculpa para parar. E você sabe disso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOBRE O EBOOK ══ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner fade-in">
+      <div class="about-quote">
+        <blockquote>
+          "Motivação é o faísca. Disciplina é o motor. Sem entender a diferença, você vai passar a vida esperando a faísca."
+        </blockquote>
+        <cite>— Ákome</cite>
+      </div>
+      <div class="about-text">
+        <span class="section-label">Sobre este ebook</span>
+        <h2 class="section-title" style="text-align:left">O que é o <span>Ákome</span>?</h2>
+        <p>
+          Ákome é um guia de autoaperfeiçoamento construído para quem está cansado de livros cheios de promessas e vazios de método. Aqui você vai encontrar verdades desconfortáveis sobre como a mente humana realmente funciona.
+        </p>
+        <p>
+          Em vez de te dar mais uma lista de hacks motivacionais, o Ákome te entrega um sistema — um conjunto de princípios aplicáveis que transformam comportamentos temporários em resultados permanentes.
+        </p>
+        <p style="color: var(--gold-muted); font-size: 0.85rem;">
+          ✦ Leitura direta e sem enrolação &nbsp;|&nbsp; ✦ Exercícios práticos ao final de cada capítulo &nbsp;|&nbsp; ✦ Acesso permanente em PDF
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ O QUE VOCÊ VAI APRENDER ══ -->
+<section id="chapters">
+  <div class="container">
+    <div class="center fade-in">
+      <span class="section-label">Conteúdo</span>
+      <h2 class="section-title">O que você vai <span>dominar</span></h2>
+      <p class="section-sub">Cada capítulo foi estruturado para desfazer um mito e construir uma nova estrutura mental.</p>
+    </div>
+    <div class="chapters-list">
+      <div class="chapter-item fade-in">
+        <span class="chapter-num">01</span>
+        <div class="chapter-content">
+          <h3>O Mito da Motivação</h3>
+          <p>Por que esperar se sentir motivado é a estratégia mais autodestrutiva que existe — e o que fazer no lugar.</p>
+        </div>
+        <span class="check">✦</span>
+      </div>
+      <div class="chapter-item fade-in">
+        <span class="chapter-num">02</span>
+        <div class="chapter-content">
+          <h3>A Neurociência do Hábito</h3>
+          <p>Como o cérebro forma padrões e como você pode hackeá-los a seu favor de forma consciente e permanente.</p>
+        </div>
+        <span class="check">✦</span>
+      </div>
+      <div class="chapter-item fade-in">
+        <span class="chapter-num">03</span>
+        <div class="chapter-content">
+          <h3>Identidade antes de Comportamento</h3>
+          <p>A diferença fundamental entre "eu quero fazer exercício" e "eu sou uma pessoa que se exercita".</p>
+        </div>
+        <span class="check">✦</span>
+      </div>
+      <div class="chapter-item fade-in">
+        <span class="chapter-num">04</span>
+        <div class="chapter-content">
+          <h3>Sistemas, não Objetivos</h3>
+          <p>Metas te dão direção, mas sistemas te dão progresso. Aprenda a construir os seus.</p>
+        </div>
+        <span class="check">✦</span>
+      </div>
+      <div class="chapter-item fade-in">
+        <span class="chapter-num">05</span>
+        <div class="chapter-content">
+          <h3>O Poder do Entorno</h3>
+          <p>Como o ambiente ao seu redor molda silenciosamente suas decisões — e como redecorar sua vida para o sucesso.</p>
+        </div>
+        <span class="check">✦</span>
+      </div>
+      <div class="chapter-item fade-in">
+        <span class="chapter-num">06</span>
+        <div class="chapter-content">
+          <h3>Recuperação e Resiliência</h3>
+          <p>Cair não é fracasso. Não se levantar com método é. Aprenda o protocolo de reinício rápido.</p>
+        </div>
+        <span class="check">✦</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFÍCIOS ══ -->
+<section id="benefits">
+  <div class="container">
+    <div class="center fade-in">
+      <span class="section-label">Transformação</span>
+      <h2 class="section-title">Depois do Ákome, você vai <span>nunca mais</span> ser o mesmo</h2>
+    </div>
+    <div class="benefits-list">
+      <div class="benefit-item fade-in">
+        <span class="benefit-num">①</span>
+        <div>
+          <h3>Clareza mental imediata</h3>
+          <p>Saber exatamente o que fazer ao acordar, sem a paralisia da escolha ou da preguiça.</p>
+        </div>
+      </div>
+      <div class="benefit-item fade-in">
+        <span class="benefit-num">②</span>
+        <div>
+          <h3>Consistência de ferro</h3>
+          <p>Agir independente do humor, da chuva ou do feed. Essa é a habilidade que separa quem chega de quem desiste.</p>
+        </div>
+      </div>
+      <div class="benefit-item fade-in">
+        <span class="benefit-num">③</span>
+        <div>
+          <h3>Identidade transformada</h3>
+          <p>Você vai deixar de ser alguém que quer mudar e passar a ser alguém que mudou.</p>
+        </div>
+      </div>
+      <div class="benefit-item fade-in">
+        <span class="benefit-num">④</span>
+        <div>
+          <h3>Resultados visíveis em 21 dias</h3>
+          <p>Com o protocolo prático do ebook, em menos de um mês você vai notar diferença real — não promessa.</p>
+        </div>
+      </div>
+      <div class="benefit-item fade-in">
+        <span class="benefit-num">⑤</span>
+        <div>
+          <h3>Saúde mental e foco reforçados</h3>
+          <p>Quanto menos você depender da motivação, menos ansiedade você vai sentir. Disciplina é paz.</p>
+        </div>
+      </div>
+      <div class="benefit-item fade-in">
+        <span class="benefit-num">⑥</span>
+        <div>
+          <h3>Método replicável</h3>
+          <p>Aplique o mesmo sistema em qualquer área da sua vida: carreira, saúde, relacionamentos ou finanças.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEPOIMENTOS ══ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="center fade-in">
+      <span class="section-label">Resultados reais</span>
+      <h2 class="section-title">O que dizem quem <span>já leu</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p>"Li em uma tarde e já na semana seguinte minha rotina estava completamente diferente. Simples, direto e transformador."</p>
+        <span class="testimonial-author">— Mariana T., 29 anos</span>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p>"Finalmente entendi por que eu começava tudo e terminava nada. O capítulo de identidade valeu o preço inteiro."</p>
+        <span class="testimonial-author">— Rafael S., 34 anos</span>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p>"Não é mais um livro de autoajuda vazio. É técnica real com linguagem humana. Recomendo sem hesitar."</p>
+        <span class="testimonial-author">— Camila R., 26 anos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA / PRICING ══ -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="center fade-in" style="margin-bottom: 48px;">
+        <span class="section-label">Oferta especial de lançamento</span>
+        <h2 class="section-title">Pronto para parar de esperar<br />a <span>motivação chegar</span>?</h2>
+      </div>
+      <div class="price-card fade-in">
+        <span class="price-badge">🔥 Acesso Imediato</span>
+        <p class="price-old">De R$ 97,00</p>
+        <p class="price-main"><sup>R$</sup>37</p>
+        <p class="price-info">pagamento único · acesso permanente em PDF</p>
+        <ul class="price-features">
+          <li>Ebook completo Ákome (PDF de alta qualidade)</li>
+          <li>6 capítulos com exercícios práticos</li>
+          <li>Protocolo de 21 dias incluído</li>
+          <li>Acesso via plataforma Kiwify após confirmação</li>
+          <li>Leitura em qualquer dispositivo</li>
+        </ul>
+        <a href="#" id="buy-btn" class="btn-gold" style="width:100%; text-align:center; display:block; padding: 22px;">
+          Quero transformar minha vida agora →
+        </a>
+        <div class="guarantee">
+          <strong>✦ Garantia de 7 dias.</strong> Se você ler e não se sentir transformado, devolvemos 100% do seu investimento. Sem perguntas.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="container">
+    <div class="center fade-in">
+      <span class="section-label">Dúvidas frequentes</span>
+      <h2 class="section-title">Ainda tem alguma <span>dúvida?</span></h2>
+      <p class="section-sub">Reunimos as perguntas mais comuns de quem está prestes a tomar a decisão certa.</p>
+    </div>
+    <div class="faq-list fade-in">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Esse ebook é realmente diferente de tudo que já li sobre disciplina e hábitos?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Sim, e essa é a aposta do Ákome. A maioria dos livros sobre hábitos repete os mesmos frameworks com nomes diferentes. O Ákome parte de um ponto oposto: em vez de te ensinar a <strong>fazer mais</strong>, ele te ensina a <strong>ser diferente</strong>. A mudança de identidade vem antes da mudança de comportamento — e é isso que torna os resultados permanentes, não temporários.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          R$ 37 para um ebook? Vale mesmo esse investimento?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Pense assim: uma sessão de coaching custa entre R$ 150 e R$ 500. Um curso online de produtividade custa entre R$ 200 e R$ 800. O Ákome entrega o mesmo núcleo de transformação por <strong>R$ 37</strong> — menos do que um jantar fora. E para quem ler e não sentir diferença, existe a garantia de 7 dias com reembolso total. O risco é completamente nosso.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          E se eu comprar e não gostar? Tenho como pedir reembolso?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Sim, sem burocracia. Você tem <strong>7 dias corridos</strong> a partir da compra para solicitar reembolso total. Basta enviar um e-mail com o assunto "Reembolso" e devolvemos 100% do valor. Sem perguntas, sem justificativas obrigatórias.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Como vou receber o ebook depois da compra?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Após a confirmação do pagamento, você receberá um <strong>e-mail da plataforma Kiwify</strong> com os dados de acesso. O ebook está disponível diretamente na sua área de membro da Kiwify — basta acessar pelo link recebido. O processo leva menos de 5 minutos. Verifique o spam se necessário.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Consigo ler no celular, tablet e computador?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Sim. O Ákome é entregue em <strong>formato PDF</strong>, compatível com qualquer dispositivo — iPhone, Android, iPad, Mac ou Windows. Você também pode imprimir se preferir a leitura física. O acesso é seu para sempre, sem expiração e sem mensalidades.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Não tenho tempo para ler. Esse ebook é longo?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>O Ákome foi escrito para ser lido em <strong>uma única tarde</strong>. Nada de páginas de enrolação ou histórias desnecessárias. Cada trecho serve a um propósito claro. Quem tem pouco tempo é exatamente quem mais se beneficia desse formato: direto, denso e aplicável.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Já tentei muitas coisas antes e sempre falhei. Por que agora seria diferente?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Porque as vezes anteriores você usava a ferramenta errada: a <strong>motivação</strong>. Ela falha com todas as pessoas — não porque você é fraco, mas porque ela foi projetada para ser temporária. O Ákome te entrega um sistema que funciona independente do seu humor, da sua disposição e do que aconteceu na sua semana. É sobre estrutura, não sobre força de vontade.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          O conteúdo é indicado para qualquer pessoa ou tem um perfil específico?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>O Ákome foi criado para qualquer pessoa acima de 16 anos que já percebeu que esforço sem método leva ao esgotamento. Se você tem metas — de saúde, carreira, estudos, relacionamentos ou finanças — e sente que falta <strong>consistência</strong> para alcançá-las, este ebook foi feito para você.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          O pagamento é seguro? Meus dados estão protegidos?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Sim. O pagamento é processado por uma plataforma de checkout com <strong>criptografia SSL</strong> e certificação de segurança. Não armazenamos dados do seu cartão em nenhum momento. Você pode pagar via cartão de crédito, Pix ou boleto.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Esse preço de R$ 37 vai aumentar?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Sim. O valor de <strong>R$ 37</strong> é o preço especial de lançamento e pode ser reajustado a qualquer momento sem aviso prévio. Quem compra agora garante o acesso pelo menor preço possível — e de forma permanente, sem cobranças futuras.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta-nudge fade-in">
+      <p>Sua dúvida não está aqui? A resposta mais simples é: <strong>arrisque R$ 37</strong> e veja por si mesmo.</p>
+      <a href="#cta" class="btn-gold">Quero meu acesso agora →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ákome</div>
+  <p style="margin-bottom:8px;">© 2026 Ákome. Todos os direitos reservados.</p>
+  <p>Este ebook é um produto digital entregue via plataforma <strong>Kiwify</strong>.</p>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth nav hide/show
+  let lastY = 0;
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.style.opacity = y > lastY && y > 80 ? '0.7' : '1';
+    lastY = y;
+  });
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>
