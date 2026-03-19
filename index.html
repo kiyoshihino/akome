@@ -471,6 +471,25 @@
 
     /* ── WHAT'S INSIDE ── */
     #chapters { background: var(--black-soft); }
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .lifestyle-content-card {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .lifestyle-image-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 4/5;
+    }
+
     .chapters-list { margin-top: 60px; }
     .chapter-item {
       display: flex;
@@ -689,8 +708,9 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .lifestyle-grid { grid-template-columns: 1fr; gap: 20px; }
-      .lifestyle-grid > div { padding: 32px !important; }
+      .lifestyle-grid { grid-template-columns: 1fr !important; gap: 20px; }
+      .lifestyle-content-card { padding: 32px !important; }
+      .lifestyle-image-card { aspect-ratio: 16/9 !important; }
       #hero { background-position: left center; }
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
       .hero-book img { max-width: 180px; transform: none; }
@@ -829,15 +849,15 @@
       <span class="section-label text-gold">Identidade</span>
       <h2 class="section-title">A Disciplina como <span>Estilo de Vida</span></h2>
     </div>
-    <div class="lifestyle-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; margin-top:60px;">
-       <div class="fade-in" style="position:relative; overflow:hidden; border-radius:4px; aspect-ratio: 4/5;">
+    <div class="lifestyle-grid">
+       <div class="fade-in lifestyle-image-card">
            <img src="assets/street-walking.jpg" alt="Street walking" style="width:100%; height:100%; object-fit:cover; transition: transform 0.8s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
            <div style="position:absolute; bottom:0; left:0; right:0; padding:40px; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                <h3 class="serif" style="font-size:1.8rem; margin-bottom:10px;">Onde quer que você esteja.</h3>
                <p style="font-size:0.9rem; color:var(--white-dim);">A disciplina não tira férias. Ela te acompanha no escritório, na rua e no silêncio do seu quarto.</p>
            </div>
        </div>
-       <div class="fade-in center glass" style="padding:60px; display:flex; flex-direction:column; justify-content:center;">
+       <div class="fade-in center glass lifestyle-content-card">
            <span class="gold" style="font-size:2rem; margin-bottom:24px;">✦</span>
            <h3 class="serif" style="font-size:2rem; margin-bottom:20px;">Não é sobre ser perfeito.</h3>
            <p style="color:var(--white-dim); margin-bottom:30px;">É sobre ser inabalável. O Ákome ensina como blindar sua mente contra as distrações do mundo moderno e focar no que realmente importa.</p>
