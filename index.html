@@ -726,6 +726,12 @@
       .price-card { padding: 36px 24px; }
       section { padding: 60px 0; }
       .mobile-only { display: block !important; margin: 0 auto 32px; max-width: 90%; }
+      .mobile-img-glow { position: relative; margin-bottom: 32px; text-align: center; }
+      .mobile-img-glow::before {
+        content: ''; position: absolute; top:50%; left:50%; width: 140%; height: 140%;
+        background: radial-gradient(circle, rgba(201,168,76,0.3) 0%, transparent 70%);
+        transform: translate(-50%, -50%); z-index: -1; filter: blur(30px); opacity: 0.8;
+      }
     }
     .mobile-only { display: none; }
 
@@ -943,7 +949,9 @@
 <div class="gold-divider"></div>
 <section id="benefits" class="glow-border">
   <div class="container">
-    <img src="assets/transformation-mobile.png" class="fade-in mobile-only" alt="Capítulo de Transformação" loading="lazy" decoding="async" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <div class="mobile-img-glow mobile-only">
+      <img src="assets/transformation-mobile.png" class="fade-in" alt="Capítulo de Transformação" loading="lazy" decoding="async" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 90%; margin: 0 auto; display: block;">
+    </div>
     <div class="center fade-in">
       <span class="section-label text-gold">Transformação</span>
       <h2 class="section-title">A mudança que é <span>definitiva</span></h2>
