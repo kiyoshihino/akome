@@ -24,9 +24,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
 
-  <!-- Fonts -->
+  <!-- Performance -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/hero-bg-final.png" media="(min-width: 769px)">
+  <link rel="preload" as="image" href="assets/hero-bg-mobile.jpg" media="(max-width: 768px)">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -938,7 +942,7 @@
 <div class="gold-divider"></div>
 <section id="benefits" class="glow-border">
   <div class="container">
-    <img src="assets/transformation-mobile.png" class="fade-in mobile-only" alt="Capítulo de Transformação" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <img src="assets/transformation-mobile.png" class="fade-in mobile-only" alt="Capítulo de Transformação" loading="lazy" decoding="async" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
     <div class="center fade-in">
       <span class="section-label text-gold">Transformação</span>
       <h2 class="section-title">A mudança que é <span>definitiva</span></h2>
@@ -1150,7 +1154,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-      <img src="assets/logo.svg" alt="Ákome Logo" style="height:60px; margin-bottom:24px;">
+      <img src="assets/logo.svg" alt="Ákome Logo" loading="lazy" decoding="async" style="height:60px; margin-bottom:24px;">
       <p style="margin-bottom:8px;">© 2026 Ákome. Todos os direitos reservados.</p>
       <p style="font-size:0.7rem; opacity:0.5;">Este ebook é um produto digital entregue via plataforma Kiwify.</p>
   </div>
