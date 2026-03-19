@@ -14,11 +14,11 @@
   <meta property="og:url" content="https://seudominio.com/" />
   <meta property="og:title" content="Ákome | Motivação não é Disciplina" />
   <meta property="og:description" content="Descubra por que motivação não é o que você precisa. O método Ákome vai transformar sua relação com resultados, hábitos e conquistas." />
-  <meta property="og:image" content="https://seudominio.com/capa-ebook.png" />
+  <meta property="og:image" content="https://seudominio.com/assets/capa-ebook-portrait.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ákome | Motivação não é Disciplina" />
   <meta name="twitter:description" content="O ebook que vai transformar sua relação com disciplina e resultados." />
-  <meta name="twitter:image" content="https://seudominio.com/capa-ebook.png" />
+  <meta name="twitter:image" content="https://seudominio.com/assets/capa-ebook-portrait.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -29,22 +29,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --black: #0a0a0a;
-      --black-soft: #111111;
-      --black-card: #161616;
+      --black: #050505;
+      --black-soft: #0a0a0a;
+      --black-card: #0f0f0f;
       --gold: #c9a84c;
-      --gold-light: #e8c96e;
-      --gold-dark: #a07830;
+      --gold-light: #eadd9b;
+      --gold-gradient: linear-gradient(135deg, #c9a84c 0%, #eadd9b 50%, #c9a84c 100%);
       --gold-muted: #8a6e3a;
       --white: #f5f0e8;
       --white-dim: #c8bfaf;
-      --text-muted: #7a7060;
+      --text-muted: #666666;
+      --glass: rgba(15, 15, 15, 0.7);
+      --glass-border: rgba(201, 168, 76, 0.2);
     }
 
+    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background-color: var(--black);
       color: var(--white);
@@ -52,6 +53,7 @@
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
+      box-shadow: none !important; /* Explicitly remove any viewport margins/shadows */
     }
 
     /* ── UTILS ── */
@@ -59,7 +61,20 @@
     .gold { color: var(--gold); }
     .gold-light { color: var(--gold-light); }
     .center { text-align: center; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    .glass {
+      background: rgba(15, 15, 15, 0.45); /* More transparent for better atmosphere */
+      backdrop-filter: blur(24px) saturate(150%);
+      -webkit-backdrop-filter: blur(24px) saturate(150%);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 4px;
+      transition: all 0.4s ease;
+    }
+    .glass:hover {
+      border-color: rgba(201, 168, 76, 0.3);
+      background: rgba(15, 15, 15, 0.55);
+    }
 
     /* ── GOLD LINE DECORATION ── */
     .gold-line {
@@ -70,26 +85,62 @@
       margin: 0 auto 32px;
     }
 
-    /* ── NAVBAR ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 18px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, transparent 100%);
-      backdrop-filter: blur(4px);
+    ::selection {
+      background: var(--gold);
+      color: var(--black);
     }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      color: var(--gold);
-      text-transform: uppercase;
+
+    .text-gold {
+      background: var(--gold-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
+
+    .btn-gold {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .btn-gold:hover::after {
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(45deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%) rotate(45deg); opacity: 0; }
+    }
+
+    .glass-gold {
+      border: 1px solid rgba(201, 168, 76, 0.4) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(201, 168, 76, 0.05) !important;
+    }
+
+    .gold-divider {
+      height: 1px;
+      width: 100%;
+      max-width: 200px;
+      margin: 60px auto;
+      background: var(--gold-gradient);
+      opacity: 0.4;
+    }
+
 
     /* ── HERO ── */
     #hero {
@@ -99,21 +150,21 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
-      padding: 120px 24px 80px;
+      padding: 80px 24px 100px;
+      background: url('assets/hero-bg-final.png') center top/cover no-repeat;
     }
     #hero::before {
       content: '';
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 70% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 80% 60% at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      background: linear-gradient(180deg, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.8) 100%);
+      z-index: 0;
     }
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
       align-items: center;
-      max-width: 1000px;
+      max-width: 1100px;
       width: 100%;
       position: relative;
       z-index: 1;
@@ -121,14 +172,15 @@
     .hero-text .badge {
       display: inline-block;
       font-size: 0.65rem;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dark);
-      padding: 6px 18px;
-      border-radius: 2px;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 24px;
+      border-radius: 40px;
       margin-bottom: 28px;
-      background: rgba(201,168,76,0.05);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
     }
     .hero-text h1 {
       font-family: 'Cormorant Garamond', serif;
@@ -137,6 +189,7 @@
       line-height: 1.05;
       color: var(--gold-light);
       margin-bottom: 16px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.6); /* Better isolation from mountain bg */
     }
     .hero-text h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -146,41 +199,14 @@
       color: var(--white-dim);
       margin-bottom: 32px;
       line-height: 1.4;
-    }
-    .hero-text p {
-      font-size: 0.95rem;
-      color: var(--white-dim);
-      margin-bottom: 40px;
-      max-width: 440px;
-    }
-    .hero-book {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .hero-book img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 4px;
-      box-shadow:
-        -20px 20px 60px rgba(0,0,0,0.8),
-        0 0 40px rgba(201,168,76,0.15),
-        0 0 80px rgba(201,168,76,0.05);
-      transform: perspective(800px) rotateY(-8deg) rotateX(3deg);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .hero-book img:hover {
-      transform: perspective(800px) rotateY(-4deg) rotateX(1deg) scale(1.03);
-      box-shadow:
-        -24px 24px 80px rgba(0,0,0,0.85),
-        0 0 60px rgba(201,168,76,0.25);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
     /* ── BUTTONS ── */
     .btn-gold {
       display: inline-block;
-      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-      color: var(--black);
+      background: var(--gold-gradient);
+      color: #1a1505; /* Deep dark bronze/black for readability */
       font-family: 'Montserrat', sans-serif;
       font-size: 0.8rem;
       font-weight: 700;
@@ -194,6 +220,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .btn-gold::before {
       content: '';
@@ -222,15 +249,45 @@
     }
     .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold); }
 
+    .glow-border {
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      box-shadow: inset 0 20px 40px rgba(0,0,0,0.2);
+    }
+
     /* ── SECTION BASE ── */
-    section { padding: 100px 0; }
+    section { 
+      padding: 120px 0; 
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* PREMIUM LIGHTING SYSTEM */
+    section::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      height: 60%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    section > .container {
+      position: relative;
+      z-index: 1;
+    }
     .section-label {
       font-size: 0.65rem;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--gold-muted);
-      margin-bottom: 16px;
+      color: var(--gold-light); /* Brighter for better readability */
+      margin-bottom: 20px;
       display: block;
+      font-weight: 500;
+      opacity: 0.8;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
@@ -496,6 +553,7 @@
       color: var(--gold-light);
       line-height: 1;
       margin-bottom: 8px;
+      text-shadow: 0 0 30px rgba(201,168,76,0.3); /* Premium glow */
     }
     .price-main sup {
       font-size: 0.4em;
@@ -652,26 +710,48 @@
 </head>
 <body>
 
-<!-- NAV -->
-<nav aria-label="Navegação principal">
-  <div class="nav-logo">Ákome</div>
-</nav>
 
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-text fade-in">
-      <span class="badge">✦ Ebook Premium ✦</span>
-      <h1>Ákome</h1>
-      <h2>Motivação não é Disciplina</h2>
-      <p>
-        Você já acordou cheio de motivação e a semana seguinte voltou a ser a mesma? A verdade é que motivação é uma mentira conveniente — e este ebook vai te mostrar o que realmente funciona.
+    <div class="hero-text fade-in glass" style="padding: 48px; position:relative;">
+      <div style="position:absolute; top:-15px; left:20px;">
+          <span class="badge">✦ Ebook Premium ✦</span>
+      </div>
+      <h1 class="serif text-gold" style="margin-top:20px;">Ákome</h1>
+      <h2 class="serif" style="font-size:1.8rem; font-style:italic; color:var(--white-dim); margin-bottom:30px;">A disciplina é o único caminho.</h2>
+      <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 40px;">
+        Esqueça a motivação barata. Descubra o método definitivo para construir uma mente inabalável e resultados que permanecem.
       </p>
-      <a href="#cta" class="btn-gold">Quero meu acesso agora</a>
-      <a href="#about" class="btn-ghost">Saiba mais</a>
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <a href="#cta" class="btn-gold">Garantir meu acesso</a>
+          <a href="#about" class="btn-ghost" style="margin:0;">Descobrir o método</a>
+      </div>
     </div>
-    <div class="hero-book fade-in">
-      <img src="capa-ebook.png" alt="Capa do Ebook Ákome - Motivação não é Disciplina" />
+    <style>
+      .book-container {
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateY(-15deg) rotateX(5deg);
+        transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+      }
+      .book-container:hover {
+        transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+      }
+      .book-container::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(105deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.05) 100%);
+        pointer-events: none;
+        border-radius: 4px;
+        z-index: 2;
+      }
+    </style>
+    <div class="hero-book fade-in" style="display:flex; justify-content:center; perspective: 1500px; z-index: 2;">
+      <div class="book-container">
+         <img src="assets/capa-ebook-portrait.png" alt="Capa do Ebook Ákome" style="max-width: 380px; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 40px rgba(201, 168, 76, 0.1); display: block;">
+      </div>
     </div>
   </div>
 </section>
@@ -680,68 +760,86 @@
 <section id="pain">
   <div class="container">
     <div class="center fade-in">
-      <span class="section-label">Você se reconhece aqui?</span>
+      <span class="section-label text-gold">Você se reconhece aqui?</span>
       <h2 class="section-title">Você já tentou de tudo.<br /><span>E cada vez começa do zero.</span></h2>
       <p class="section-sub">A maioria das pessoas nunca chegará onde quer porque continua apostando na ferramenta errada. A motivação te move por dias. A disciplina te move por décadas.</p>
     </div>
     <div class="pain-grid">
-      <div class="pain-card fade-in">
+      <div class="pain-card fade-in glass">
         <span class="pain-icon">🔁</span>
-        <h3>Recomeça todo mês</h3>
+        <h3 class="serif">Círculo Vicioso</h3>
         <p>A segunda-feira se tornou o seu rito de passagem. Mas desta vez vai ser diferente, certo?</p>
       </div>
-      <div class="pain-card fade-in">
+      <div class="pain-card fade-in glass">
         <span class="pain-icon">🎯</span>
-        <h3>Metas que nunca saem do papel</h3>
+        <h3 class="serif">Metas Fantasmas</h3>
         <p>Você sabe exatamente o que quer. O problema é que a empolgação dura apenas até o primeiro obstáculo real.</p>
       </div>
-      <div class="pain-card fade-in">
+      <div class="pain-card fade-in glass">
         <span class="pain-icon">😮‍💨</span>
-        <h3>Esgotamento sem avanço</h3>
+        <h3 class="serif">Esgoto Mental</h3>
         <p>Trabalha muito, se cobra mais ainda, mas a sensação de progresso real simplesmente não aparece.</p>
-      </div>
-      <div class="pain-card fade-in">
-        <span class="pain-icon">📱</span>
-        <h3>Distração constante</h3>
-        <p>Você começa a tarefa, cinco minutos depois está no feed. A concentração parece impossível nos dias de hoje.</p>
-      </div>
-      <div class="pain-card fade-in">
-        <span class="pain-icon">📊</span>
-        <h3>Comparação paralisante</h3>
-        <p>Você olha para quem chegou lá e sente que está ficando para trás. Em vez de te mover, isso te paralisa ainda mais.</p>
-      </div>
-      <div class="pain-card fade-in">
-        <span class="pain-icon">🚧</span>
-        <h3>Sabotagem no momento H</h3>
-        <p>Quando as coisas finalmente começam a funcionar, algo dentro de você encontra uma desculpa para parar. E você sabe disso.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══ SOBRE O EBOOK ══ -->
+<div class="gold-divider"></div>
 <section id="about">
   <div class="container">
     <div class="about-inner fade-in">
-      <div class="about-quote">
-        <blockquote>
-          "Motivação é o faísca. Disciplina é o motor. Sem entender a diferença, você vai passar a vida esperando a faísca."
-        </blockquote>
-        <cite>— Ákome</cite>
+      <div class="about-visual" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; align-items: start;">
+         <div style="grid-column: 1 / 10; grid-row: 1; z-index: 1;" class="fade-in">
+            <img src="assets/office-discipline.jpg" alt="Discipline" style="width:100%; border-radius:4px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+         </div>
+         <div style="grid-column: 6 / 13; grid-row: 1; margin-top: 80px; z-index: 2;" class="fade-in">
+            <img src="assets/logo-mockup.jpg" alt="Ákome Brand" style="width:100%; border-radius:4px; border: 6px solid var(--black); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+         </div>
       </div>
       <div class="about-text">
-        <span class="section-label">Sobre este ebook</span>
-        <h2 class="section-title" style="text-align:left">O que é o <span>Ákome</span>?</h2>
+        <span class="section-label text-gold">Fundamentos</span>
+        <h2 class="section-title" style="text-align:left">O que é o <span class="text-gold">Ákome</span>?</h2>
         <p>
-          Ákome é um guia de autoaperfeiçoamento construído para quem está cansado de livros cheios de promessas e vazios de método. Aqui você vai encontrar verdades desconfortáveis sobre como a mente humana realmente funciona.
+          Ákome não é apenas um ebook. É um manifesto para quem cansou de ser refém das próprias emoções. O termo, inspirado na força interior e na retidão, representa o ponto onde a vontade se torna ação constante.
         </p>
         <p>
           Em vez de te dar mais uma lista de hacks motivacionais, o Ákome te entrega um sistema — um conjunto de princípios aplicáveis que transformam comportamentos temporários em resultados permanentes.
         </p>
-        <p style="color: var(--gold-muted); font-size: 0.85rem;">
-          ✦ Leitura direta e sem enrolação &nbsp;|&nbsp; ✦ Exercícios práticos ao final de cada capítulo &nbsp;|&nbsp; ✦ Acesso permanente em PDF
-        </p>
+        <div class="about-quote" style="margin-top:40px;">
+          <blockquote style="font-size: 1.4rem;">
+            "Motivação é o faísca. Disciplina é o motor. Sem entender a diferença, você vai passar a vida esperando a faísca."
+          </blockquote>
+          <cite>— Equipe Ákome</cite>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ESTILO DE VIDA ══ -->
+<div class="gold-divider"></div>
+<section id="lifestyle" class="glow-border" style="background: var(--black-soft);">
+  <div class="container">
+    <div class="center fade-in">
+      <span class="section-label text-gold">Identidade</span>
+      <h2 class="section-title">A Disciplina como <span>Estilo de Vida</span></h2>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; margin-top:60px;">
+       <div class="fade-in" style="position:relative; overflow:hidden; border-radius:4px; aspect-ratio: 4/5;">
+           <img src="assets/street-walking.jpg" alt="Street walking" style="width:100%; height:100%; object-fit:cover; transition: transform 0.8s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+           <div style="position:absolute; bottom:0; left:0; right:0; padding:40px; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+               <h3 class="serif" style="font-size:1.8rem; margin-bottom:10px;">Onde quer que você esteja.</h3>
+               <p style="font-size:0.9rem; color:var(--white-dim);">A disciplina não tira férias. Ela te acompanha no escritório, na rua e no silêncio do seu quarto.</p>
+           </div>
+       </div>
+       <div class="fade-in center glass" style="padding:60px; display:flex; flex-direction:column; justify-content:center;">
+           <span class="gold" style="font-size:2rem; margin-bottom:24px;">✦</span>
+           <h3 class="serif" style="font-size:2rem; margin-bottom:20px;">Não é sobre ser perfeito.</h3>
+           <p style="color:var(--white-dim); margin-bottom:30px;">É sobre ser inabalável. O Ákome ensina como blindar sua mente contra as distrações do mundo moderno e focar no que realmente importa.</p>
+           <div class="gold-line" style="margin: 0 auto;"></div>
+           <p style="font-style:italic; font-size:0.85rem; color:var(--gold-muted);">"A liberdade real começa onde a sua disciplina termina."</p>
+       </div>
     </div>
   </div>
 </section>
@@ -750,7 +848,7 @@
 <section id="chapters">
   <div class="container">
     <div class="center fade-in">
-      <span class="section-label">Conteúdo</span>
+      <span class="section-label text-gold">Conteúdo</span>
       <h2 class="section-title">O que você vai <span>dominar</span></h2>
       <p class="section-sub">Cada capítulo foi estruturado para desfazer um mito e construir uma nova estrutura mental.</p>
     </div>
@@ -808,53 +906,33 @@
 </section>
 
 <!-- ══ BENEFÍCIOS ══ -->
-<section id="benefits">
+<div class="gold-divider"></div>
+<section id="benefits" class="glow-border">
   <div class="container">
     <div class="center fade-in">
-      <span class="section-label">Transformação</span>
-      <h2 class="section-title">Depois do Ákome, você vai <span>nunca mais</span> ser o mesmo</h2>
+      <span class="section-label text-gold">Transformação</span>
+      <h2 class="section-title">A mudança que é <span>definitiva</span></h2>
     </div>
     <div class="benefits-list">
-      <div class="benefit-item fade-in">
-        <span class="benefit-num">①</span>
+      <div class="benefit-item fade-in glass">
+        <span class="benefit-num serif">01</span>
         <div>
-          <h3>Clareza mental imediata</h3>
+          <h3 class="serif">Clareza mental imediata</h3>
           <p>Saber exatamente o que fazer ao acordar, sem a paralisia da escolha ou da preguiça.</p>
         </div>
       </div>
-      <div class="benefit-item fade-in">
-        <span class="benefit-num">②</span>
+      <div class="benefit-item fade-in glass">
+        <span class="benefit-num serif">02</span>
         <div>
-          <h3>Consistência de ferro</h3>
+          <h3 class="serif">Consistência de ferro</h3>
           <p>Agir independente do humor, da chuva ou do feed. Essa é a habilidade que separa quem chega de quem desiste.</p>
         </div>
       </div>
-      <div class="benefit-item fade-in">
-        <span class="benefit-num">③</span>
+      <div class="benefit-item fade-in glass">
+        <span class="benefit-num serif">03</span>
         <div>
-          <h3>Identidade transformada</h3>
+          <h3 class="serif">Identidade transformada</h3>
           <p>Você vai deixar de ser alguém que quer mudar e passar a ser alguém que mudou.</p>
-        </div>
-      </div>
-      <div class="benefit-item fade-in">
-        <span class="benefit-num">④</span>
-        <div>
-          <h3>Resultados visíveis em 21 dias</h3>
-          <p>Com o protocolo prático do ebook, em menos de um mês você vai notar diferença real — não promessa.</p>
-        </div>
-      </div>
-      <div class="benefit-item fade-in">
-        <span class="benefit-num">⑤</span>
-        <div>
-          <h3>Saúde mental e foco reforçados</h3>
-          <p>Quanto menos você depender da motivação, menos ansiedade você vai sentir. Disciplina é paz.</p>
-        </div>
-      </div>
-      <div class="benefit-item fade-in">
-        <span class="benefit-num">⑥</span>
-        <div>
-          <h3>Método replicável</h3>
-          <p>Aplique o mesmo sistema em qualquer área da sua vida: carreira, saúde, relacionamentos ou finanças.</p>
         </div>
       </div>
     </div>
@@ -865,7 +943,7 @@
 <section id="testimonials">
   <div class="container">
     <div class="center fade-in">
-      <span class="section-label">Resultados reais</span>
+      <span class="section-label text-gold">Resultados reais</span>
       <h2 class="section-title">O que dizem quem <span>já leu</span></h2>
     </div>
     <div class="testimonials-grid">
@@ -893,10 +971,10 @@
   <div class="container">
     <div class="cta-inner">
       <div class="center fade-in" style="margin-bottom: 48px;">
-        <span class="section-label">Oferta especial de lançamento</span>
+        <span class="section-label text-gold">Oferta especial de lançamento</span>
         <h2 class="section-title">Pronto para parar de esperar<br />a <span>motivação chegar</span>?</h2>
       </div>
-      <div class="price-card fade-in">
+      <div class="price-card fade-in glass glass-gold">
         <span class="price-badge">🔥 Acesso Imediato</span>
         <p class="price-old">De R$ 97,00</p>
         <p class="price-main"><sup>R$</sup>37</p>
@@ -905,14 +983,14 @@
           <li>Ebook completo Ákome (PDF de alta qualidade)</li>
           <li>6 capítulos com exercícios práticos</li>
           <li>Protocolo de 21 dias incluído</li>
-          <li>Acesso via plataforma Kiwify após confirmação</li>
+          <li>Acesso imediato após confirmação</li>
           <li>Leitura em qualquer dispositivo</li>
         </ul>
         <a href="#" id="buy-btn" class="btn-gold" style="width:100%; text-align:center; display:block; padding: 22px;">
-          Quero transformar minha vida agora →
+          Garantir meu acesso agora →
         </a>
         <div class="guarantee">
-          <strong>✦ Garantia de 7 dias.</strong> Se você ler e não se sentir transformado, devolvemos 100% do seu investimento. Sem perguntas.
+          <strong>✦ Garantia de 7 dias.</strong> Se você ler e não se sentir transformado, devolvemos 100% do seu investimento.
         </div>
       </div>
     </div>
@@ -920,10 +998,10 @@
 </section>
 
 <!-- ══ FAQ ══ -->
-<section id="faq">
+<section id="faq" class="glow-border">
   <div class="container">
     <div class="center fade-in">
-      <span class="section-label">Dúvidas frequentes</span>
+      <span class="section-label text-gold">Dúvidas frequentes</span>
       <h2 class="section-title">Ainda tem alguma <span>dúvida?</span></h2>
       <p class="section-sub">Reunimos as perguntas mais comuns de quem está prestes a tomar a decisão certa.</p>
     </div>
@@ -1041,13 +1119,16 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Ákome</div>
-  <p style="margin-bottom:8px;">© 2026 Ákome. Todos os direitos reservados.</p>
-  <p>Este ebook é um produto digital entregue via plataforma <strong>Kiwify</strong>.</p>
+  <div class="container">
+      <img src="assets/logo-official.png" alt="Ákome Logo" style="height:50px; filter:brightness(0) invert(1); opacity:0.6; margin-bottom:24px;">
+      <p style="margin-bottom:8px;">© 2026 Ákome. Todos os direitos reservados.</p>
+      <p style="font-size:0.7rem; opacity:0.5;">Este ebook é um produto digital entregue via plataforma Kiwify.</p>
+  </div>
 </footer>
 
 <script>
   // Fade-in on scroll
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -1055,18 +1136,9 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, observerOptions);
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Smooth nav hide/show
-  let lastY = 0;
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    nav.style.opacity = y > lastY && y > 80 ? '0.7' : '1';
-    lastY = y;
-  });
   // FAQ Accordion
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
