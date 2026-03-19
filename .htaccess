@@ -37,12 +37,11 @@ ErrorDocument 404 /index.html
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# ── Redirecionar www → sem www (ajuste o domínio) ─────────
-# RewriteEngine On
-# RewriteCond %{HTTP_HOST} ^www\.seudominio\.com [NC]
-# RewriteRule ^(.*)$ https://seudominio.com/$1 [L,R=301]
+# ── Redirecionar www → sem www (Ajuste o domínio abaixo) ───
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
 # ── Forçar HTTPS ──────────────────────────────────────────
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
